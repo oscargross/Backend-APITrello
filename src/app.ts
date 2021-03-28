@@ -11,8 +11,8 @@ export const InitApp = (routes: any) => {
     app.use(routes);
     app.use(cors());
 
-    app.listen(process.env.PORT , () => {
-        console.info(`Listenning at ${process.env.PORT}`);
+    app.listen(process.env.PORT || 3333 , () => {
+        console.info(`Listenning server`);
       })
       .on('error', err => {
         console.info(`Err: Error listen server: ${err}`);
