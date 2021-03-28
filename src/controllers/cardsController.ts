@@ -38,8 +38,10 @@ export let updateCard = async (req: Request, res: Response) => {
                 res.status(400).json(Boom.notFound('Parameter not found').output.payload))
 };
 export let readCards = async (req: Request, res: Response) => {
-    const { nameCard } = req.query;
+    console.log("Testando");
 
+    const { nameCard } = req.query;
+    
     await findField({nameField: nameCard, field: 'cards' })
         .then(result => res.status(200).json(result))
 
